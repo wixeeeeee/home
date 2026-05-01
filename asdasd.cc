@@ -255,7 +255,25 @@ void showHero(Character &c){
 }
 
 void getCharacter(){
-    
+    json j;
+    j["name"] = c.name;
+    j["hp"] = c.hp;
+    j["Strength"] = c.Strength;
+    j["Dexterity"] = c.Dexterity;
+    j["Constit"] = c.Constit;
+    j["Intelligence"] = c.Intelligence;
+    j["Wisdom"] = c.Wisdom;
+    j["Charisma"] = c.Charisma;
+    j["race"] = c.race;
+    j["clase"] = c.clase;
+    j["God"] = c.God;
+    j["ClassTal"] = c.ClassTal;
+    j["ClassDop"] = c.ClassDop;
+    j["RaceName"] = c.RaceName;
+    j["RaceBonus"] = c.RaceBonus;
+
+    ofstream out(filename);
+    out << j.dump(4);
 }
 
 void saveCharacter(const Character& c, const string& filename) {
